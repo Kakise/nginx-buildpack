@@ -9,12 +9,16 @@
 # Once the dyno has is 'up' you can open your browser and navigate
 # this dyno's directory structure to download the nginx binary.
 
-# NGINX coming from google's script that includs PageSpeed module
+# NGINX coming from google's script that includes PageSpeed module
+
+echo "Building nginx..."
 
 bash <(curl -f -L -sS https://gist.githubusercontent.com/Kakise/dc5f241b0deac02342a6902e7cf30208/raw/8eb69151ecc7a5bba3ddbcfc4aad7e7650b863a4/nginx_install.sh) \
      --nginx-version latest \
      --additional-nginx-configure-arguments "--prefix=/tmp/nginx" \
      --assume-yes
+
+echo "Build finished"
 
 while true
 do
